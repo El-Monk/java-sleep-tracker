@@ -13,26 +13,26 @@ public class SleepTrackerApp {
     public static void main(String[] args) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yy HH:mm");
 
-        try(BufferedReader reader = new BufferedReader(new InputStreamReader(
-//                new FileInputStream(args[0]))))
-                new FileInputStream("src/main/resources/sleep_log.txt")))) {
-             List<SleepSession> sleepSessions = reader.lines()
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(
+                new FileInputStream(args[0])))) {
+//                new FileInputStream("src/main/resources/sleep_log.txt")))) {
+            List<SleepSession> sleepSessions = reader.lines()
                     .map(line -> line.split(";"))
-                     .map(parts -> new SleepSession(
-                             LocalDateTime.parse(parts[0], formatter),
-                             LocalDateTime.parse(parts[1], formatter),
-                             SleepQuality.valueOf(parts[2])
-                     ))
-                     .toList();
+                    .map(parts -> new SleepSession(
+                            LocalDateTime.parse(parts[0], formatter),
+                            LocalDateTime.parse(parts[1], formatter),
+                            SleepQuality.valueOf(parts[2])
+                    ))
+                    .toList();
 
-             List<SleepAnalyzer> resultSessions = new ArrayList<>();
-             resultSessions.add(new SessionCountAnalyzer());
-             resultSessions.add(new MinDurationAnalyzer());
-             resultSessions.add(new MaxDurationAnalyzer());
-             resultSessions.add(new AverageDurationAnalyzer());
-             resultSessions.add(new BadQualityCountAnalyzer());
-             resultSessions.add(new SleeplessNightsAnalyzer());
-             resultSessions.add(new ChronotypeAnalyzer());
+            List<SleepAnalyzer> resultSessions = new ArrayList<>();
+            resultSessions.add(new SessionCountAnalyzer());
+            resultSessions.add(new MinDurationAnalyzer());
+            resultSessions.add(new MaxDurationAnalyzer());
+            resultSessions.add(new AverageDurationAnalyzer());
+            resultSessions.add(new BadQualityCountAnalyzer());
+            resultSessions.add(new SleeplessNightsAnalyzer());
+            resultSessions.add(new ChronotypeAnalyzer());
 
             resultSessions.forEach(t -> {
                 SleepAnalysisResult session = t.analyze(sleepSessions);

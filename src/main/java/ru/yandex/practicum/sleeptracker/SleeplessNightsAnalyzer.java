@@ -7,8 +7,8 @@ import java.util.stream.LongStream;
 
 public class SleeplessNightsAnalyzer implements SleepAnalyzer {
     @Override
-    public SleepAnalysisResult analyze (List<SleepSession> sessions) {
-        if (sessions.size() == 0 ) {
+    public SleepAnalysisResult analyze(List<SleepSession> sessions) {
+        if (sessions.size() == 0) {
             return new SleepAnalysisResult("Количество бессоных ночей ", 0L);
         }
 
@@ -29,8 +29,8 @@ public class SleeplessNightsAnalyzer implements SleepAnalyzer {
 
         long noSleepNights = nights.stream()
                 .filter(night -> sessions.stream().noneMatch(session ->
-                        session.start.isBefore(night.atTime(6,0)) &&
-                        session.end.isAfter(night.atStartOfDay())))
+                        session.start.isBefore(night.atTime(6, 0)) &&
+                                session.end.isAfter(night.atStartOfDay())))
                 .count();
 
         return new SleepAnalysisResult("Количество бессоных ночей ", noSleepNights);

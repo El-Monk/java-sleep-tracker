@@ -122,13 +122,13 @@ public class TestDataFactory {
                         SleepQuality.GOOD
                 ),
                 new SleepSession(
-                        LocalDateTime.of(2025,10,4,1,0),
-                        LocalDateTime.of(2025,10,4,10,30),
+                        LocalDateTime.of(2025, 10, 4, 1, 0),
+                        LocalDateTime.of(2025, 10, 4, 10, 30),
                         SleepQuality.GOOD
                 ),
                 new SleepSession(
-                        LocalDateTime.of(2025,10,5,2,0),
-                        LocalDateTime.of(2025,10,5,5,30),
+                        LocalDateTime.of(2025, 10, 5, 2, 0),
+                        LocalDateTime.of(2025, 10, 5, 5, 30),
                         SleepQuality.GOOD
                 )
         );
