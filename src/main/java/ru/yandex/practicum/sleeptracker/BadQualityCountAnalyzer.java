@@ -1,6 +1,5 @@
 package ru.yandex.practicum.sleeptracker;
 
-import java.time.Duration;
 import java.util.List;
 
 public class BadQualityCountAnalyzer implements SleepAnalyzer {

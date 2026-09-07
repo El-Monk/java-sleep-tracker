@@ -1,10 +1,8 @@
 package ru.yandex.practicum.sleeptracker;
 
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
-import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
 public class SleeplessNightsAnalyzer implements SleepAnalyzer {
