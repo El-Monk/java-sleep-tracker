@@ -8,6 +8,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+    Я случайно закрыл (нажал "Merge pull request") первый PR, извините, виноват.
+    Этот коммит сделан специально для второго PR.
+    Если такой вариант не подойдёт, то можете, пожалуйста, рассказать, как поступить в такой ситуации
+ */
+
 public class SleepTrackerApp {
 
     public static void main(String[] args) {
